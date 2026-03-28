@@ -1,0 +1,132 @@
+/* === YT LOCKDOWN — injected styles === */
+
+body.yt-lockdown-active {
+  overflow: hidden !important;
+}
+
+/* Hide homepage feed */
+body.yt-lockdown-active ytd-browse,
+body.yt-lockdown-active ytd-rich-grid-renderer,
+body.yt-lockdown-active ytd-shelf-renderer {
+  display: none !important;
+}
+
+/* Hide sidebar / recommendations */
+body.yt-lockdown-active #secondary,
+body.yt-lockdown-active #related,
+body.yt-lockdown-active ytd-watch-next-secondary-results-renderer {
+  display: none !important;
+}
+
+/* Hide top search bar / header nav */
+body.yt-lockdown-active #masthead-container {
+  display: none !important;
+}
+
+/* Hide comments */
+body.yt-lockdown-active #comments,
+body.yt-lockdown-active ytd-comments {
+  display: none !important;
+}
+
+/* Hide end screen / cards */
+body.yt-lockdown-active .ytp-ce-element,
+body.yt-lockdown-active .ytp-endscreen-element,
+body.yt-lockdown-active .ytp-cards-teaser,
+body.yt-lockdown-active .ytp-cards-button {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+/* Hide playlist, chapters sidebar */
+body.yt-lockdown-active #playlist,
+body.yt-lockdown-active ytd-playlist-panel-renderer {
+  display: none !important;
+}
+
+/* Expand video to fill space */
+body.yt-lockdown-active #primary {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+body.yt-lockdown-active ytd-watch-flexy[flexy] #columns {
+  flex-direction: column !important;
+}
+
+/* Hide below-video info that's not essential */
+body.yt-lockdown-active #below {
+  display: none !important;
+}
+
+/* Lockdown overlay banner */
+#yt-lockdown-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  background: #0a0a0a;
+  border-top: 1px solid #ff0000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px;
+  font-family: 'Space Mono', monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: #555;
+  pointer-events: none;
+}
+
+#yt-lockdown-banner .lock-label {
+  color: #ff2222;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+}
+
+#yt-lockdown-banner .lock-hint {
+  color: #333;
+  font-size: 9px;
+}
+
+/* Prevent scrolling away from video */
+body.yt-lockdown-active #page-manager {
+  overflow: hidden !important;
+}
+
+/* Blocked YouTube tabs while another tab owns lockdown */
+body.yt-lockdown-tab-blocked-active #page-manager,
+body.yt-lockdown-tab-blocked-active ytd-app {
+  visibility: hidden !important;
+}
+
+#yt-lockdown-tab-blocked {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  background: #0a0a0a;
+  color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.1em;
+  text-align: center;
+  padding: 24px;
+}
+
+#yt-lockdown-tab-blocked .block-title {
+  font-size: 14px;
+  color: #ff4444;
+}
+
+#yt-lockdown-tab-blocked .block-sub {
+  font-size: 11px;
+  color: #888;
+  max-width: 420px;
+  line-height: 1.8;
+}

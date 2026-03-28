@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "YT Lockdown",
+  "version": "1.1.0",
+  "description": "Lock yourself into a YouTube video. No feed. No recommendations. No escape.",
+  "author": "Ziad Hossam",
+  "homepage_url": "https://ziad-hossam.vercel.app",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["lockdown.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
