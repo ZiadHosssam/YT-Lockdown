@@ -30,3 +30,4 @@ When lockdown is active:
 ## Support
 
 For bug reports, feature requests, or support, contact via email or website above.
+You may want to donate here also: 0 11 19066776
